@@ -1,7 +1,20 @@
 /* ALISA PALSON */
 
-:root {
+/* Getting required fonts from google */
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
 
+:root {
+	--yellow: #F6D64A;
+	--teal: #55BCD5;
+	--purple: #9B26B0;
+	--blue: #499bd2;
+	--dark-grey: #222222;
+	--light-grey: #eaeaea;
+	--white: #ffffff;
+	--black: #000000;
+
+	--molle: "Molle", serif;
+	--montserrat: "Montserrat", serif;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -52,3 +65,5 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
