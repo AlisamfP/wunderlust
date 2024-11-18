@@ -1,69 +1,304 @@
 /* ALISA PALSON */
 
 /* Getting required fonts from google */
-@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap");
 
 :root {
-	--yellow: #F6D64A;
-	--teal: #55BCD5;
-	--purple: #9B26B0;
-	--blue: #499bd2;
-	--dark-grey: #222222;
-	--light-grey: #eaeaea;
-	--white: #ffffff;
-	--black: #000000;
+  --yellow: #f6d64a;
+  --teal: #55bcd5;
+  --purple: #9b26b0;
+  --blue: #499bd2;
+  --dark-grey: #222222;
+  --light-grey: #eaeaea;
+  --white: #ffffff;
+  --black: #000000;
 
-	--molle: "Molle", serif;
-	--montserrat: "Montserrat", serif;
+  --molle: "Molle", serif;
+  --montserrat: "Montserrat", serif;
+  font-size: 16px;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*	end css reset	*/
+
+/* 
+skip to content link styles
+https://css-tricks.com/how-to-create-a-skip-to-content-link/ 
+*/
+
+#skip {
+  background: #e77e23;
+  height: 30px;
+  left: 50%;
+  padding: 8px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
 }
 
+#skip:focus {
+  transform: translateY(0%);
+}
 
+/* screen reader only styles */
+/* https://webaim.org/techniques/css/invisiblecontent/ */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--white);
+}
+header {
+  /* fallback blue in case gradient isn't supported */
+  background-color: var(--blue);
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "logo nav"
+    "title title"
+    "tagline tagline";
+}
+
+header h1 {
+  grid-area: title;
+  font-size: 3rem;
+}
+
+#logo {
+  grid-area: logo;
+  width: 160px;
+}
+
+#logo img {
+  width: 100%;
+}
+
+header p {
+  grid-area: tagline;
+}
+
+nav {
+  grid-area: nav;
+}
+
+#menu-toggle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+#menu-toggle a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+#menu-toggle input {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#menu-toggle label {
+  flex: 1;
+  position: absolute;
+  height: 50px;
+  top: 50px;
+  width: 50%;
+  left: 80%;
+  z-index: 2;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+#menu-toggle ul {
+  position: absolute;
+  width: 100%;
+  padding-top: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  list-style-type: none;
+  right: -150%;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+#menu-toggle li {
+  padding: 10px 0;
+  background-color: var(--blue);
+}
+
+/*
+   * Slide the menu in from left when the input is checked
+*/
+#menu-toggle input:checked ~ ul {
+  right: 0;
+  height: 100%;
+}
+#menu-toggle input:checked ~ label {
+  background: var(--black);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+  left: 0;
+  flex: 2;
+}
+
+/* apply gradient if browser supports it */
+@supports (
+  background-image: linear-gradient(180deg, var(--blue), var(--white))
+) {
+  header {
+    background-image: linear-gradient(180deg, var(--blue), var(--white));
+  }
+}
+
+/* tablet styles */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: red;
+  }
+}
+
+/* web styles */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: green;
+  }
+}
