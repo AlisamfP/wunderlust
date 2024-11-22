@@ -103,6 +103,23 @@ h1, h2, h3 {
   font-family: var(--molle);
 }
 
+
+h1 {
+  font-size: 3.125rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 1.875rem;
+}
+
 h4, p, q, small, nav, button, form {
   font-family: var(--montserrat);
 }
@@ -127,21 +144,24 @@ header {
 
 header h1 {
   grid-area: title;
-  font-size: 3.1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 0;
 }
 
 #logo {
   grid-area: logo;
-  width: 160px;
   z-index: 1;
+  width: 100%;
+  padding-top: 7.5px;
 }
 
 #logo img {
-  width: 100%;
+  width: 160px;
 }
 
 header p {
+  max-width: 25ch;
+  font-size: 1.25rem;
+  padding: 0 2rem;
   grid-area: tagline;
 }
 
@@ -207,6 +227,7 @@ nav {
   align-items: center;
   justify-content: center;
   background-color: var(--teal);
+  border: 1px solid var(--black);
   height: 100px;
   margin: -1px;
 }
@@ -214,6 +235,7 @@ nav {
 /* Slide the menu in from right when the input is checked */
 #menu-toggle input:checked ~ ul {
   right: 0px;
+  z-index: 2;
 }
 
 /* Slide menu label into place in center of nav */
@@ -221,7 +243,102 @@ nav {
   background: var(--black);
   color: var(--white);
   width: 100%;
+  z-index: 3;
 }
+
+/* INTRO SECTION */
+#intro h2{
+  padding: 50px 0 0 37px;
+  line-height: 50px;
+}
+#intro p {
+  line-height: 30px;
+  padding: 0 37px;
+}
+
+#img-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#img-grid img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* PLAN YOUR TRIP SECTION */
+#plan {
+  background-color: var(--yellow);
+  padding: 25px 37px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#plan div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#plan section {
+  background-color: var(--blue);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  height: 300px;
+  width: 358px;
+  text-align: center;
+}
+
+#plan section h4 {
+  font-weight: 600;
+  padding: 27px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+#plan section img {
+  width: 180px;
+  height: 180px;
+}
+
+/* TESTIMONIALS SECTION */
+#testimonials{
+  padding: 48px;
+}
+
+#testimonials section {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  padding-top: 12px;
+  text-align: center;
+  gap: 4px;
+}
+
+#testimonials section h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 34px;
+  max-width: 13ch;
+}
+
+#testimonials q {
+  font-style: italic;
+  width: 22ch;
+}
+#testimonials q::before {
+  content: '“';
+}
+#testimonials q::after{
+  content: '”';
+}
+
+
+
+
+
 
 /* apply gradient if browser supports it */
 @supports (background-image: linear-gradient(180deg, var(--teal), var(--white))) {
