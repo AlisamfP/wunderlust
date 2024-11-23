@@ -296,7 +296,7 @@ nav {
 }
 
 #plan section {
-  background-color: var(--blue);
+  background-color: var(--teal);
   border: 1px solid var(--white);
   border-radius: 5px;
   height: 300px;
@@ -518,7 +518,7 @@ select:focus + .focus {
   left: -1px;
   right: -1px;
   bottom: -1px;
-  border: 2px solid var(--select-focus);
+  border: 2px solid var(--yellow); /*FIX ME */
   border-radius: inherit;
 }
 
@@ -546,6 +546,7 @@ footer {
 footer a {
   color: var(--black);
   text-decoration: none;
+  font-family: var(--montserrat);
 }
 
 /* apply gradient if browser supports it */
@@ -608,7 +609,67 @@ footer a {
     background-color: var(--yellow);
   }
 
+  #intro h2, 
+  #intro p {
+    padding: 0 80px;
+  }
+  
+  #intro h2 {
+    padding-top: 20px
+  }
 
+  #img-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    grid-auto-flow: dense;
+  }
+
+  #img-grid img:first-child {
+    grid-column: 2/3;
+  }
+
+  #img-grid picture {
+    grid-column: 1/-1;
+  }
+
+  #plan div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #testimonials div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #about div {
+    grid-template-columns: repeat(4, min-content);
+    gap: 0 1rem;
+    justify-content: space-evenly;
+  }
+
+  #contact fieldset {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #selects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #selects label {
+    padding-top: 0;
+  }
+
+  #mySubmit {
+    width: 296px;
+    align-self: flex-end;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
 
 }
