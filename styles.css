@@ -282,6 +282,11 @@ nav {
   padding: 25px 37px;
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+#plan h3 {
+  justify-self: flex-start;
 }
 
 #plan div {
@@ -495,10 +500,7 @@ select::-ms-expand {
   padding: 0.25rem 0rem 1.25rem 0;
   font-size: 1.25rem;
   cursor: pointer;
-  line-height: 1.1;
-  background-image: linear-gradient(to top, var(--light-grey), #fff 33%);
   grid-area: select;
-  position: relative;
 }
 
 select::after {
@@ -527,13 +529,23 @@ select:focus + .focus {
   color: var(--white);
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 1.25rem;
 }
 
 
 /* FOOTER SECTION */
 footer {
-  height: 500px;
   background-color: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+footer a {
+  color: var(--black);
+  text-decoration: none;
 }
 
 /* apply gradient if browser supports it */
