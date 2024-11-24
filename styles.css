@@ -540,6 +540,11 @@ select::-ms-expand {
   color: var(--black);
 }
 
+/* outline is larger for the button to have better visibility */
+#mySubmit:focus {
+  outline: 6px solid var(--yellow);
+}
+
 
 /* FOOTER SECTION */
 footer {
@@ -617,6 +622,18 @@ footer a:hover {
     height: 50px;
     background-color: var(--white);
     border: none;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr;
+    align-content: center;
+    grid-template-rows: 1fr;
+  }
+
+  #menu-toggle a {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 1rem 0;
   }
 
   #menu-toggle .active {
@@ -723,12 +740,6 @@ footer a:hover {
     height: 50px;
   }
 
-  #menu-toggle a {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding: 1rem;
-  }
 
   #menu-toggle a:hover {
     background-color: var(--yellow);
